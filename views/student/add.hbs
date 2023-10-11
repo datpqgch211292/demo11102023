@@ -1,0 +1,29 @@
+<form action="/student/add" method="post" class="container col-md-8 card bg-warning mt-3">
+    <h1 class="text text-danger text-uppercase text-center mt-3">Add new student</h1>
+    <div class="form-group mt-3">
+        <label for="name" class="text-primary">Name</label>
+        <input class="form-control" type="text" name="name" required minlength="3" maxlength="30">
+    </div>
+    <div class="form-group mt-3">
+        <label for="birthday" class="text-primary">Birthday</label>
+        <input class="form-control" type="date" name="dob" required>
+    </div>
+    <div class="form-group mt-3">
+        <label for="gpa" class="text-primary">GPA</label>
+        <input class="form-control" type="number" name="gpa" required min="0" max="10">
+    </div>
+    <div class="form-group mt-3">
+        <label for="gender" class="text-primary">Gender</label>
+        <input type="radio" name="gender" id="" value="Male"> Male
+        <input type="radio" name="gender" id="" value="Female"> Female
+    </div>
+    <div class="form-group mt-3">
+        <label for="image" class="text-primary">Image</label>
+        <input type="url" class="form-control" name="image" required>
+    </div>
+    <div class="form-group mt-3 text-center">
+        <input type="submit" value="Add" class="btn btn-primary">
+        <input type="reset" value="Clear" class="btn btn-success">
+    </div>
+
+</form>

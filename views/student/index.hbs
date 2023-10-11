@@ -1,0 +1,38 @@
+<div class="container col-md-8 text-center">
+
+
+    <table class="table table-danger">
+        <tr>
+            <th colspan="3">
+                Student List
+            </th>
+            <th>
+                <a class="btn btn-primary" href="/student/add">Add</a>
+            </th>
+        </tr>
+        <tr>
+            <th>Student Name</th>
+            <th>Student Birthday</th>
+            <th>Student Image</th>
+            <th>Menu</th>
+        </tr>
+        {{#each students }}
+        <tr>
+            <td>{{ name }}</td>
+            <td>
+                {{ dateFormat dob "DD/MM/YYYY" }}
+            </td>
+            <td>
+                <a href="/student/detail/{{ _id }}">
+                    <img src="{{ image }}" alt="" width="150" height="150">
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-warning" href="/student/edit/{{ _id }}">Edit</a>
+                <a class="btn btn-danger" href="/student/delete/{{ _id }}"
+                onclick="return confirm('Are you sure you want to delete this ?');">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

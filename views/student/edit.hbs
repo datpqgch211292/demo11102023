@@ -1,0 +1,38 @@
+<form action="/student/edit/{{ student._id }}" method="post" class="container col-md-8 card bg-warning mt-3">
+    <h1 class="text text-danger text-uppercase text-center mt-3">Edit new student</h1>
+    <div class="form-group mt-3">
+        <label for="name" class="text-primary">Name</label>
+        <input class="form-control" type="text" name="name" required minlength="3" maxlength="30" value="{{ student.name }}" disable>
+    </div>
+    <div class="form-group mt-3">
+        <label for="birthday" class="text-primary">Birthday</label>
+        <input class="form-control" type="date" name="dob" required value="{{ dateFormat student.dob "YYYY-MM-DD" }}">
+    </div>
+    <div class="form-group mt-3">
+        <label for="gpa" class="text-primary">GPA</label>
+        <input class="form-control" type="number" name="gpa" required min="0" max="10" value="{{ student.gpa }}">
+    </div>
+    <div class="form-group mt-3">
+        <label for="gender" class="text-primary">Gender</label>
+        <br>
+        {{#equal student.gender "Male"}}
+            <input type="radio" name="gender" id="" value="Male" checked=true> Male
+            <input type="radio" name="gender" id="" value="Female" > Female
+        {{/equal}}
+        {{#equal studen.gender "Female"}}
+            <input type="radio" name="gender" id="" value="Male" > Male
+            <input type="radio" name="gender" id="" value="Female" checked=true> Female
+        {{/equal}}
+    </div>
+    <div class="form-group mt-3">
+        <label for="image" class="text-primary">Image</label>
+        <img src="{{ student.image }}" width="150" height="150"> <br> <br>
+        <br>
+        <input type="url" class="form-control" name="image" required value="{{ student.image }}">
+    </div>
+    <div class="form-group mt-3 text-center">
+        <input type="submit" value="Edit" class="btn btn-primary">
+        <input type="reset" value="Clear" class="btn btn-success">
+    </div>
+
+</form>

@@ -1,0 +1,14 @@
+<div class="container col-md-10">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{{ student.image }}" alt="this is student image" width="300" height="300">
+        </div>
+        <div class="col-md-7 card bg-success">
+            <h1>Student Detail</h1>
+            <h3>Name : {{ student.name }}</h3>
+            <h3>Gender : {{ student.gender }}</h3>
+            <h3>DoB: {{ dateFormat student.dob "DD-MM-YYYY" }}</h3>
+            <h3>GPA: {{ student.gpa }}</h3>
+        </div>
+    </div>
+</div>
